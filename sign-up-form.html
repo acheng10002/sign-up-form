@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="sign-up-form.css">
+  </head>
+  <body>
+        <div class="container">
+            <div class="wrapper"> 
+                <div class="item left">
+                    <div class="logo">
+                        <div class="logo-image">
+                            <img src="odin-lined.png" alt="odin image">
+                        </div>
+                        <div class="logo-text">
+                            <h1>Odin</h1>
+                        </div>
+                    </div>
+                    <p class="image-credit">Photo by <u>Halie West</u> on <u>Unsplash</u></p>
+                </div>
+                <div class="item right">
+                    <div class="top">
+                        <p class="top-text">
+                            This is not a real online service! You know you need something
+                            like this in your life to help you realize your deepest dreams.
+                            Sign up now to get started.<br>
+                            <br>
+                            You <em>know</em> you want to.
+                        </p>
+                    </div>
+                    <form id="form">
+                    <div class="middle">
+                        <p class="top-text">
+                            Let's do this!
+                        </p>
+                        <div class="form-main-container">
+                            <div class="column left-column">
+                                <label for="first-name">FIRST NAME</label> 
+                                <input type="text" id="first-name" name="first-name" class="input">
+                                <label for="email">EMAIL</label>
+                                <input type="email" id="email" name="email" class="input">
+                                <label for="new-pw">PASSWORD</label>
+                                <input type="password" id="new-pw" name="new-pw" class="error input" required>
+                                <p><p>
+                            </div>
+                            <div class="column right-column">
+                                <label for="last-name">LAST NAME</label> 
+                                <input type="text" id="last-name" name="last-name" class="input">
+                                <label for="tel">PHONE NUMBER</label>
+                                <input type="tel" id="tel" name="tel" class="input">
+                                <label for="confirm-pw">CONFIRM PASSWORD</label>
+                                <input type="password" id="confirm-pw" name="confirm-pw" class="error input" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <button onclick="checkPasswords()">Create Account</button>
+                        <p class="end">Already have an account? <span>Log in</span></p>
+                    </div>
+                    </form>
+                </div>
+            </div> 
+        </div>
+        <script>
+            function checkPasswords() {
+              const newPassword = document.getElementById("new-pw").value;
+              const confirmPassword = document.getElementById("confirm-pw").value;
+              
+              if (newPassword === "" || confirmPassword === "") {
+                alter("Please fill in both password fields.");
+              } else if (newPassword === confirmPassword) {
+                alert("Passwords match!");
+              } else {
+                alert("Passwords do not match. Please try again.");
+              }
+            }
+        </script>
+  </body>
+</html>
